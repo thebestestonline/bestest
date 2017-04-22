@@ -17,6 +17,9 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
 
 h1, h2, h3 {
     font-family: 'Open Sans', sans-serif;
@@ -34,10 +37,12 @@ h1, h2, h3 {
 
 .navbar-default .navbar-brand {
     color: white;
+    font-weight: bold;
 }
 
 .navbar-default .navbar-nav > li > a {
   color: white;
+  
 }
 
 .navbar-default .navbar-brand:hover {
