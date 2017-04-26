@@ -1,13 +1,30 @@
-<div id="slider" class="homepage-callout text-center container-fluid">
-    <h1>The best search. Literally.</h1>
-    <h3>Quickly search for the best of anything.</h3>
+<div>
+    <div class="homepage-callout text-center container-fluid toggle">
+        <h1>The best search. Literally.</h1>
+        <h3 class="static">Quickly search for the best <span class="element typer"></span></h3>
+    </div>
+        <div class="search-container">
+            <div class="container input-group-lg">
+              <input type="text" autofocus class="form-control" placeholder="Search for the best..." onkeypress="toggle(document.querySelector('.toggle'));">
+            </div>
+        </div>
+    <div class="results-bg"><!--for color only -->
+    </div>
 </div>
-    <div class="search-container">
-        <div class="container input-group-lg">
-          <input type="text" class="form-control" placeholder="Search for the best..." autofocus oninput="document.getElementById('slider').classList.toggle('closed’)”>
-        
-        </div><!-- /input-group -->
-    </div><!-- /.row -->
-<div class="results-bg">
-    
-</div>
+
+<!--typing animation -->
+<script src="typed.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+      Typed.new('.element', {
+        strings: ["^700 sushi in San Francisco.^900", "^700 affordable mountain bikes.^900" , 
+        "^700 gluten free blueberry muffins.^900", "^700Goldendoodle breeders.^900" ,
+        "^700 stock music for video editing.^900", "^700 roofers in Sheboygan.^900" ,
+        "^700 online bookkeeping software.^900" ],
+        typeSpeed: 80,
+        shuffle: true,
+        loop: true,
+        loopCount: null,
+      });
+  });
+</script>
