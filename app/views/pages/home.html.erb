@@ -1,6 +1,10 @@
 <div>
     <div class="homepage-callout text-center container-fluid toggle">
-        <h1>The best search. Literally.</h1>
+        <% if user_signed_in? %>
+          <h1>Hey, lookin' good!</h1>
+        <% else %>
+          <h1>The best search. Literally.</h1>
+        <% end %>
         <h3 class="static">Quickly search for the best <span class="element typer"></span></h3>
     </div>
         <div class="search-container">
