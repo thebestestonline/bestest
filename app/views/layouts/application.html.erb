@@ -28,12 +28,11 @@
             
               <ul class="nav navbar-nav navbar-right">
                 <li><%= link_to "About", about_path %></li>
-                <li><%= link_to "Contact", new_contact_path %></li>
                   <% if user_signed_in? %>
                     <li><%= link_to "Log Out",destroy_user_session_path, method: :delete%></li>
                   <% else %>
                     <li><%= link_to "Log In", new_user_session_path%></li>
-                    <li><%= link_to "Sign Up", new_user_registration_path %></li>
+                    <li><%= link_to "Sign Up", new_user_registration_path(plan: $basic_plan) %></li>
                   <% end %>
               </ul>
           </div><!-- /.navbar-collapse -->
@@ -42,7 +41,21 @@
    
 
       <%= yield %>
+ 
+   
+   
+  <nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav navbar-fixed-bottom">
+        <li><%= link_to "Get Listed", get_listed_path %></li>
+        <li><%= link_to "Contact", new_contact_path %></li>
+      </ul>
+  
+  </div>
+</nav>  
+    
       
+  
     
   </body>
 </html>

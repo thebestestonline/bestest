@@ -1,0 +1,3 @@
+Membershps
+    Regular / Just clicks signup form
+    "Get Listed" goes to a "Get listed on bestest" page where you have a new form

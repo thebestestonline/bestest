@@ -1,17 +1,20 @@
 <div>
     <div class="homepage-callout text-center container-fluid toggle">
         <% if user_signed_in? %>
-          <h1>Hey, lookin' good!</h1>
+          <h1>Hey hey, lookin' good!</h1>
         <% else %>
           <h1>The best search. Literally.</h1>
         <% end %>
         <h3 class="static">Quickly search for the best <span class="element typer"></span></h3>
     </div>
-        <div class="search-container">
-            <div class="container input-group-lg">
-              <input type="text" autofocus class="form-control" placeholder="Search for the best..." onkeypress="toggle(document.querySelector('.toggle'));">
+      <div class="row search-container">
+            <div class="form-group">
+              <div class="col-md-6 col-md-offset-3  input-group-lg">
+                <input type="text" autofocus class="form-control" placeholder="Search for the best..." onkeypress="toggle(document.querySelector('.toggle'));">
+               
+              </div>
             </div>
-        </div>
+      </div>
     <div class="results-bg"><!--for color only -->
     </div>
 </div>
