@@ -11,3 +11,18 @@ User Profiles
 * User should be able to create and view their user profile
 * User profile should have a profile picture
 * User should be able to view all user profiles
+
+
+Search Terms
+
+The term 
+Its rank
+Company Name
+Avatar
+Short description
+Long description 
+Images
+Videos
+
+
+
