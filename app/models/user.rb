@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :plan
   has_one :profile
+  has_many :bests
   
   attr_accessor :stripe_card_token
     def save_with_subscription

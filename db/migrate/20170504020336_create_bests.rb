@@ -10,6 +10,7 @@ class CreateBests < ActiveRecord::Migration[5.0]
       t.string  :email
       t.text  :address
       t.string  :phone_number
+      t.timestamps
     end
   end
 end
