@@ -13,14 +13,17 @@ User Profiles
 * User should be able to view all user profiles
 
 
-Search Terms
+Bests
 
-The term 
-Its rank
+The Term 
+Its Rank
 Company Name
-Avatar
 Short description
 Long description 
+Phone Number
+Email
+Address
+
 Images
 Videos
 
