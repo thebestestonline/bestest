@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <h1 class="text-center">What Are You Best At?</h1>
-    <p class="text-center">Create a Bestest keyword profile.</p>
+    <h4 class="text-center">Create A New Bestest Keyword Profile.</h4>
     <div class="well">
         <%= form_for @best, :url => {:action => "create"} do |f| %>
         
@@ -10,7 +10,7 @@
           <%= f.text_field :term, class: 'form-control' %>
         </div>
         <div class="form-group">
-          <%= f.label :Company_name , "Company Name / Wesbsite" %>
+          <%= f.label :Company_name , "Company Name / Website" %>
           <%= f.text_field :company_name, class: 'form-control' %>
         </div>
         <div class="form-group">

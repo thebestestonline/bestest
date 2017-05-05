@@ -1,9 +1,10 @@
 <div class="container">
     <h2>My Keyword Profiles</h2>
 
-    <ul><% @bests.each do |best| %>
-      <li><%= best.term %></li><br>
-        <%end%>
+    <ul class="list-unstyled">
+      <% @bests.each do |best| %>
+        <li><%= link_to best.term , user_best_path(current_user.id,best.id) %></li><br>
+      <%end%>
     </ul>
    
     </div>
