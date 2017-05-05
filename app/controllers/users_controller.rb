@@ -12,10 +12,4 @@ class UsersController < ApplicationController
     @user = User.find( params[:id] )
   end
   
-  def best
-    @user = User.find( params[:id] )
-    @best = @user.Best( params[:id] )
-  end
-  
-  
 end

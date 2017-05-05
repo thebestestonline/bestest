@@ -3,7 +3,8 @@
 
     <ul class="list-unstyled">
       <% @bests.each do |best| %>
-        <li><%= link_to best.term , user_best_path(current_user.id,best.id) %></li><br>
+        <li><%= link_to best.term , user_best_path(current_user.id,best.id) %> <%= link_to "Edit" , edit_user_best_path(current_user.id,best.id) %></li><br>
+       
       <%end%>
     </ul>
    

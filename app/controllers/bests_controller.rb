@@ -1,4 +1,14 @@
 class BestsController < ApplicationController
+  
+  before_action :authenticate_user!
+  before_action :require_permission, only: :index
+
+def require_permission
+  if current_user != User.find( params[:user_id] )
+    redirect_to root_path
+  end
+end
+
 
   before_action :set_user, only: [:show]
     def set_user
