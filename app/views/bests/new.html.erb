@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h1 class="text-center">What Are You Best At?</h1>
+    <p class="text-center">Create a Bestest keyword profile.</p>
+    <div class="well">
+        <%= form_for @best, :url => {:action => "create"} do |f| %>
+        
+        <div class="form-group">
+          <%= f.label :Keyword_Term, "Keyword Term" %>
+          <%= f.text_field :term, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :Company_name , "Company Name / Wesbsite" %>
+          <%= f.text_field :company_name, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-6">
+              <%= f.label :Email %>
+              <%= f.text_field :email, class: 'form-control' %>
+            </div>
+            <div class="col-md-6">
+              <%= f.label :Phone_number %>
+              <%= f.text_field :phone_number, class: 'form-control' %>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :Short_Description, "Short Description" %>
+          <%= f.text_area :short_description, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :Long_Description, "Long Description" %>
+          <%= f.text_area :long_description, class: 'form-control' %>
+        </div>
+        
+        <div class="form-group">
+          <%= f.submit "Create Keyword Profile", class: 'btn btn-primary btn-block' %>
+        </div>
+        
+      <% end %>
+    </div>
+  </div>
+</div>
