@@ -37,7 +37,6 @@
                         <% if current_user.profile %>
                           <li><%= link_to "My Profile", user_path(id: current_user.id) %></li>
                           <li><%= link_to "Edit Profile", edit_user_profile_path(user_id: current_user.id) %></li>
-                          <li><%= link_to "Add A Best", new_user_best_path(user_id: current_user.id) %></li>
                           <li><%= link_to "My Bests", user_bests_path(current_user.id) %></li>
 
                         <% else %>

@@ -1,3 +1,8 @@
 
 
--finish edit routes for bests from index file_field
+*finish edit routes for bests from index file_field
+*add delete to keyword profile
+
+add web address to the database
+seperate company and website address in the form
+list company name and have it link to the web address in the db

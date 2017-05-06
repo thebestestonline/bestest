@@ -34,8 +34,10 @@
           <%= f.text_area :long_description, class: 'form-control' %>
         </div>
         
-        <div class="form-group">
-          <%= f.submit "Create Keyword Profile", class: 'btn btn-primary btn-block' %>
+        <div class="form-group text-right">
+          <%= link_to "Cancel", user_bests_path(current_user.id), class: 'btn btn-default',
+          data: {confirm: "Are you sure you want to cancel?"} %>
+          <%= f.submit "Create Keyword Profile", class: 'btn btn-primary' %>
         </div>
         
       <% end %>
