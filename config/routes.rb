@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-    root to: 'search#new'
+    root to: 'pages#home'
     devise_for :users, controllers: { registrations: 'users/registrations' }
     
     resources :users do

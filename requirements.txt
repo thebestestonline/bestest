@@ -3,5 +3,9 @@
 *finish edit routes for bests from index file_field
 *add delete to keyword profile
 *add web address to the database
+*list company name and have it link to the web address in the db
+*fix flash messages
 
-list company name and have it link to the web address in the db
+protext bests index from ppl with a basic membership
+fix logic on dropdown
+have flashes fade out

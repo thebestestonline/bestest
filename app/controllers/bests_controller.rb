@@ -10,6 +10,7 @@ def require_permission
 end
 
 
+
   before_action :set_user, only: [:show, :edit, :update, :destroy]
     def set_user
      @u = User.find( params[:user_id] )
@@ -60,7 +61,7 @@ end
   private
     def best_params
       params.require(:best).permit( :term, :rank, :company_name, :short_description,
-      :long_description,  :email, :address, :phone_number  )
+      :long_description,  :email, :address, :phone_number, :web_address  )
     end
       
 
