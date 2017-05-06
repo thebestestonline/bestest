@@ -34,13 +34,18 @@
                     <li class="dropdown dd-pad">
                       <a href="#" data-toggle="dropdown" class="dropdown-toggle dd-text">My Account <span class="caret"></span></a>
                       <ul class="dropdown-menu" id="menu1">
-                        <% if current_user.profile %>
+                        <% if $pro_plan && current_user.profile %>
                           <li><%= link_to "My Profile", user_path(id: current_user.id) %></li>
                           <li><%= link_to "Edit Profile", edit_user_profile_path(user_id: current_user.id) %></li>
                           <li><%= link_to "My Bests", user_bests_path(current_user.id) %></li>
-
-                        <% else %>
+                        <% elsif $pro_plan && current_user.profile == false %>
                           <li><%= link_to "Create Profile", new_user_profile_path(user_id: current_user.id) %></li>
+                          <li><%= link_to "Edit Profile", edit_user_profile_path(user_id: current_user.id) %></li>
+                          <li><%= link_to "My Bests", user_bests_path(current_user.id) %></li>
+                        <% elsif $basic_plan && current_user.profile %>
+                        <li><%= link_to "My Profile", user_path(id: current_user.id) %></li>
+                        <% else %>
+                        <li><%= link_to "Create Profile", new_user_profile_path(user_id: current_user.id) %></li>
                         <% end %>
                         <li class="divider"></li>
                         <li><%= link_to "Log Out",destroy_user_session_path, method: :delete%></li>
