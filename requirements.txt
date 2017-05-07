@@ -5,7 +5,11 @@
 *add web address to the database
 *list company name and have it link to the web address in the db
 *fix flash messages
+*have flashes fade out
 
-protext bests index from ppl with a basic membership
+protect bests index from ppl with a basic membership
 fix logic on dropdown
-have flashes fade out
+
+add sorting to bests newest/oldest/ (views / rank / clicks) https://www.youtube.com/watch?v=cWYiAVMSHD4\
+add search to bests on user profile
+require form files on best submission

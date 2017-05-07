@@ -8,7 +8,14 @@ class ApplicationController < ActionController::Base
         def beforeAction
             $basic_plan = Plan.find(1)
             $pro_plan = Plan.find(2)
+           
         end
+   
+    
+        
+   
+
+
         
 #white listing form fields        
     before_action :configure_permitted_parameters, if: :devise_controller?

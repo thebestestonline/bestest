@@ -63,25 +63,26 @@
           </div><!-- /.navbar-collapse -->
         </div>
       </nav>
-      
-      <div class="container">
-      <% flash.each do |type, msg| %>
-        <%= content_tag :div, msg, class: "alert alert-#{type}" %>
-      <% end %>
-      </div>
+  
+        <div class=" flash-container">
+          <% flash.each do |type, msg| %>
+            <%= content_tag :div, msg, class: "alert alert-#{type}" %>
+          <% end %>
+        </div>
+     
 
       <%= yield %>
  
-   
-   
-  <nav class="navbar navbar-default navbar-fixed-bottom">
-  <div class="container">
-    <ul class="nav navbar-nav">
-        <li><%= link_to "Get Listed", get_listed_path %></li>
-        <li><%= link_to "About", about_path %></li>
-        <li><%= link_to "Contact", new_contact_path %></li>
-      </ul>
+
+      <nav class="navbar navbar-default navbar-fixed-bottom">
+      <div class="container">
+        <ul class="nav navbar-nav">
+            <li><%= link_to "Get Listed", get_listed_path %></li>
+            <li><%= link_to "About", about_path %></li>
+            <li><%= link_to "Contact", new_contact_path %></li>
+          </ul
   
+    
   </div>
 </nav>  
     

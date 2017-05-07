@@ -10,19 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170506153140) do
+ActiveRecord::Schema.define(version: 20170507125058) do
 
   create_table "bests", force: :cascade do |t|
-    t.integer "user_id"
-    t.string  "term"
-    t.integer "rank"
-    t.string  "company_name"
-    t.text    "short_description"
-    t.text    "long_description"
-    t.string  "email"
-    t.text    "address"
-    t.string  "phone_number"
-    t.string  "web_address"
+    t.integer  "user_id"
+    t.string   "term"
+    t.integer  "rank"
+    t.string   "company_name"
+    t.text     "short_description"
+    t.text     "long_description"
+    t.string   "email"
+    t.text     "address"
+    t.string   "phone_number"
+    t.string   "web_address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "contacts", force: :cascade do |t|

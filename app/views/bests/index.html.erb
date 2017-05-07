@@ -1,7 +1,31 @@
 <div class="container">
   
     <h2>My Keyword Profiles</h2>
+    
       <div class="text-right">
+        <%= form_tag user_bests_path(current_user.id), :method => 'get' do %>
+          <p>
+            <%= text_field_tag :search, params[:search] %>
+            <%= submit_tag "Search", :name => nil %>
+          </p>
+     
+        
+        
+        <div class="btn-group">
+          <button type="button" class="btn btn-default dropdown-toggle" 
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Sort By <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="#">Rank</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Newest</a></li>
+            <li><a href="#">Oldest</a></li>
+            <li><a href="#">Views</a></li>
+            <li><a href="#">Clicks</a></li>
+          </ul>
+        </div>
+        
         <%= link_to "New Keyword Profile" ,new_user_best_path(user_id: current_user.id),
         :class =>"btn btn-primary" %>
       </div>
@@ -20,5 +44,7 @@
       </div>
       <%end%>
     </ul>
+     <% end %>
+    <br>
    
     </div>

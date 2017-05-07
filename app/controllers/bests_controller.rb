@@ -19,8 +19,13 @@ end
     
   before_action :set_index, only: [:index]
     def set_index
-     @u = User.find( params[:user_id] )
-     @bests = @u.bests.all
+      @u = User.find( params[:user_id] )
+      @b = @u.bests.all
+      if params[:search]
+        @bests = @b.search(params[:search]).order("created_at DESC")
+        else
+        @bests = @b.order('created_at DESC')
+      end
     end
     
   def update
@@ -71,12 +76,15 @@ end
   
 #GET to /users/:user_id/bests/ 
   def index
+  
   end
+
   
     
 #GET to /users/:user_id/bests/:id/edit
   def edit
   end
+  
    
    
    
