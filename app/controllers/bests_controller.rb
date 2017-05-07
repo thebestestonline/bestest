@@ -60,7 +60,11 @@ end
       if @best.save
         flash[:success] = "Keyword Saved!"
         redirect_to user_bests_path(current_user.id)
+      else
+         flash[:warning] = "Please complete form!"
+         redirect_to new_user_best_path(user_id: current_user.id)
       end
+      
   end
     
   private

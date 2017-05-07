@@ -2,7 +2,7 @@
   
     <h2>My Keyword Profiles</h2>
     
-      <div class="text-right">
+      <div class="text-right input-group-lg">
         <%= form_tag user_bests_path(current_user.id), :method => 'get' do %>
           <p>
             <%= text_field_tag :search, params[:search] %>
