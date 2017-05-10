@@ -1,5 +1,9 @@
 class Best < ActiveRecord::Base
+  acts_as_votable
   belongs_to :user
+  
+
+
   
   validates :term, presence: true
   validates :short_description, presence: true
@@ -12,6 +16,12 @@ class Best < ActiveRecord::Base
   def self.search(search)
     where("term LIKE ?", "%#{search}%") 
   end
+
+
+
+
+
+
   
   
   

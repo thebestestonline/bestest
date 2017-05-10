@@ -7,9 +7,16 @@
 *fix flash messages
 *have flashes fade out
 *add search to bests on user profile
+*require form files on best submission
+*protect bests index from ppl with a basic membership
+*add search to homepage
+*avoid double keyword entries
 
-protect bests index from ppl with a basic membership
 fix logic on dropdown
 
+style homepage seach
+make homepage search exact match
 add sorting to bests newest/oldest/ (views / rank / clicks) https://www.youtube.com/watch?v=cWYiAVMSHD4\
-require form files on best submission
+
+
+add ranking

@@ -10,6 +10,12 @@ Rails.application.routes.draw do
         resources :bests
     end
     
+    resources :bests do
+        member do
+            put "like", to: "bests#upvote"
+            put "dislike", to: "bests#downvote"
+        end
+    end
     
     
     get 'about', to: 'pages#about'
@@ -18,5 +24,9 @@ Rails.application.routes.draw do
     resources :search
     
     get 'contact-us', to: 'contacts#new', as: 'new_contact'
+    
+    
+    
+    
     
 end

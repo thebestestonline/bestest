@@ -10,12 +10,26 @@ class ApplicationController < ActionController::Base
             $pro_plan = Plan.find(2)
            
         end
-   
-    
         
-   
+    before_action :set_index
+        def set_index
+     
+            @b = Best.all
+            if params[:search]
+                @bests = @b.search(params[:search])
+                else
+                @bests = @b.none
+            end
+      end      
+       
+            
 
 
+          
+            
+            
+        
+    
         
 #white listing form fields        
     before_action :configure_permitted_parameters, if: :devise_controller?
