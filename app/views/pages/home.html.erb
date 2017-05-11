@@ -24,34 +24,15 @@
       <div class="text-right input-group-lg">
         <%= form_tag root_path, :method => 'get' do %>
           <p>
-            <%= text_field_tag :search, params[:search] %>
-            <%= submit_tag "Search", :name => nil %>
+            <%= text_field_tag :search, params[:search], :id =>"best_search", remote: true %>
+            <%= submit_tag "Search", :name => nil, remote: true %>
           </p>
       </div>
-  
     <br>
     <ul class="list-unstyled">
-      <% @bests.each do |best| %>
-      <div class="well">
-        <li><h3><%= link_to best.company_name , user_best_path(best.user_id,best.id) %></h3></li>
-        <li><%= best.term %></li>
-          <div class="text-right"><br>
-          <% if user_signed_in? %>
-          <%= link_to 'UP'  , like_best_path(best),method: :put, :class => "btn btn-default"  %>
-          <%= link_to best.get_upvotes.size %>
-          <%= link_to 'DOWN'  , dislike_best_path(best),method: :put, :class => "btn btn-default" %>
-          <%= link_to best.get_downvotes.size %>
-          <% else %>
-          <%= link_to 'UP'  , new_user_session_path, :class => "btn btn-default"  %>
-          <%= link_to best.get_upvotes.size %>
-          <%= link_to 'DOWN'  , new_user_session_path, :class => "btn btn-default" %>
-          <%= link_to best.get_downvotes.size %>
-          <% end %>
-          
-          </div>
-      </div>
-      <%end%>
+     <%= render 'bests/best' , :id => "best-item", remote: true %>
     </ul>
+      
      <% end %>
   <!--remove these eventually -->
     <br>

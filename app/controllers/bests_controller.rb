@@ -23,11 +23,11 @@ end
     def set_index
       @u = User.find( params[:user_id] )
       @b = @u.bests.all
-      @rank = Best.find_votes_for(:vote_scope => 'rank').sum(:vote_weight)
+     
       if params[:search]
-        @bests = @b.search(params[:search]).order(@rank)
+        @bests = @b.search(params[:search]).order('cached_weighted_average DESC')
         else
-        @bests = @b.order('created_at DESC')
+        @bests = @b.order('cached_weighted_average DESC')
       end
     end
     

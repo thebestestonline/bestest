@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  
 
 
         
@@ -16,7 +17,7 @@ class ApplicationController < ActionController::Base
      
             @b = Best.all
             if params[:search]
-                @bests = @b.search(params[:search])
+                @bests = @b.search(params[:search]).order(:cached_weighted_score => :desc)
                 else
                 @bests = @b.none
             end

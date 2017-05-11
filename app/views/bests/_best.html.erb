@@ -1,11 +1,21 @@
-     <% @bests.each do |best| %>
-      <div class="well">
+
+  <% @bests.each do |best|  %>
+    <div class="well">
         <li><h3><%= link_to best.company_name , user_best_path(best.user_id,best.id) %></h3></li>
         <li><%= best.term %></li>
-          <div class="text-right"><br>
-          
-          <%= link_to current_user.vote_for(best) , :class=>"btn btn-default"   %>
-          <%= link_to current_user.vote_against(best) , :class=>"btn btn-default" %>
+          <div id="vote_thing" class="text-right"><br>
+          <% if user_signed_in? %>
+          <%= link_to best.cached_votes_score %>
+          <%= link_to 'UP'  , like_best_path(best),method: :put, :class => "btn btn-default",remote: true  %>
+          <%= link_to best.get_upvotes.size %>
+          <%= link_to 'DOWN'  , dislike_best_path(best),method: :put, :class => "btn btn-default", remote: true %>
+          <%= link_to best.get_downvotes.size %>
+          <% else %>
+          <%= link_to 'UP'  , new_user_session_path, :class => "btn btn-default"  %>
+          <%= link_to best.get_upvotes.size %>
+          <%= link_to 'DOWN'  , new_user_session_path, :class => "btn btn-default" %>
+          <%= link_to best.get_downvotes.size %>
+          <% end %>
           </div>
-      </div>
-      <% end %>
+        </div>
+    <%end%>

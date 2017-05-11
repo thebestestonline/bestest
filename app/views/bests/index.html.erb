@@ -35,6 +35,7 @@
       <% @bests.each do |best| %>
       <div class="well">
         <li><%= link_to best.term , user_best_path(current_user.id,best.id) %></li>
+        <li>Current Score: <%= link_to best.cached_votes_score, '#' %></li>
           <div class="text-right">
           <%= link_to "Edit" , edit_user_best_path(current_user.id,best.id),
           :class => "btn btn-success"  %>
