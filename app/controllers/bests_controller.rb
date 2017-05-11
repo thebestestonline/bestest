@@ -106,7 +106,7 @@ end
   private
     def best_params
       params.require(:best).permit( :term, :rank, :company_name, :short_description,
-      :long_description,  :email, :address, :phone_number, :web_address  )
+      :long_description, :avatar, :email, :address, :phone_number, :web_address  )
     end
       
 

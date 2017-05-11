@@ -1,6 +1,7 @@
 
   <% @bests.each do |best|  %>
     <div class="well">
+        <%= image_tag best.avatar.url %>
         <li><h3><%= link_to best.company_name , user_best_path(best.user_id,best.id) %></h3></li>
         <li><%= best.term %></li>
           <div id="vote_thing" class="text-right"><br>
