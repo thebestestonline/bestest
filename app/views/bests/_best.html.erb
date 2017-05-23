@@ -1,22 +1,163 @@
 
-  <% @bests.each do |best|  %>
-    <div class="well">
-        <%= image_tag best.avatar.url %>
-        <li><h3><%= link_to best.company_name , user_best_path(best.user_id,best.id) %></h3></li>
-        <li><%= best.term %></li>
-          <div id="vote_thing" class="text-right"><br>
-          <% if user_signed_in? %>
-          <%= link_to best.cached_votes_score %>
-          <%= link_to 'UP'  , like_best_path(best),method: :put, :class => "btn btn-default",remote: true  %>
-          <%= link_to best.get_upvotes.size %>
-          <%= link_to 'DOWN'  , dislike_best_path(best),method: :put, :class => "btn btn-default", remote: true %>
-          <%= link_to best.get_downvotes.size %>
-          <% else %>
-          <%= link_to 'UP'  , new_user_session_path, :class => "btn btn-default"  %>
-          <%= link_to best.get_upvotes.size %>
-          <%= link_to 'DOWN'  , new_user_session_path, :class => "btn btn-default" %>
-          <%= link_to best.get_downvotes.size %>
-          <% end %>
+
+
+<% @bests.each do |best|  %>
+
+  <div class="zero-pad container-fluid index-fluid">
+    <div class="container" >
+      <div class="row best-index">
+        <div class="col-md-2">
+          <%= image_tag best.avatar.url, :class => 'avatar-index pull-left' %>
+        </div>
+        <div class="col-md-9 move-left">
+          <div class="row">
+          <div class="col-md-6">
+          <li><h3 class="best-h3 text-left"><%= link_to best.company_name , best.web_address %></h3></li>
+          </div>
+          <div  class="col-md-6">
+          <ul class="bestLi-pad">
+            <li class='bestLi b-reviews' id='reviews'>Reviews</li>
+            <li class='bestLi b-media' id='media'>Media</li>
+            <li class='bestLi b-info' id='info'>Info</li>
+          </ul>
+          </div>
+          
+          </div>
+          <li><h5 class="zero-margin text-left"><%= best.term %></h5></li>
+          <li><p class="zero-margin text-left"><%= best.short_description %></p></li>
+        </div>
+            <div class="zero-pad-rt col-md-1">
+              <div  class="text-right voteLine">
+                <% if user_signed_in? %>
+                  <%= button_to  like_best_path(best),{:name => nil,method: :put , :class =>"voteButton", remote: true} do %>
+                    <i class="fa fa-angle-up"></i>
+                  <% end%>
+                  <%= button_to  dislike_best_path(best),{:name => nil,method: :put , :class =>"voteButton", remote: true} do %>
+                    <i class="fa fa-angle-down"></i>
+                  <% end %>
+                <% else %>
+                  <%= button_to  new_user_session_path,{:name => nil,method: :put , :class =>"voteButton", remote: true} do %>
+                    <i class="fa fa-angle-up"></i>
+                  <% end %>
+                  <%= button_to  new_user_session_path,{:name => nil,method: :put , :class =>"voteButton", remote: true} do %>
+                    <i class="fa fa-angle-down"></i>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+      </div>
+      <div class="more-info zero-pad" id="info-expanded">
+        <div class=" text-left zero-pad">
+          <h2 class="info-h text-left">Info</h2>
+          <p class="zero-margin info-p"><%= best.long_description %></p>
+          <br>
+          <div class='info-line'>
+            <h2 class="info-h text-left">Contact</h2>
+            </div>
+        <div class="container contact-blue">
+          <div>
+          <i class="contact-i fa fa-2x fa-map-marker"></i><br>
+          <i class="contact-i fa fa-2x fa-envelope"></i><br><p><%= mail_to best.email, "Email Us" %></p>
+          <i class="contact-i fa fa-2x  fa-phone-square  "></i><p><%= link_to best.phone_number %></p>
           </div>
         </div>
-    <%end%>
+          </div>
+
+        
+      </div>
+      <!-- Carousel -->
+      <div class="more-media"id="media-expanded">
+        <div id="myCarousel" class="media-full carousel slide" data-ride="carousel" data-interval="false">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+      
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner ">
+             <div class="item active">
+             <div align="center">
+               <video class="video-js" controls preload="auto" >
+                  <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" type='video/mp4'>
+              </video>
+          </div>
+             <div class="carousel-caption">
+              <h3></h3>
+              <p></p>
+            </div>
+          </div> 
+      
+            <div class="item">
+              <img src="https://images.unsplash.com/photo-1476610182048-b716b8518aae?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&h=900&fit=max" alt="Chicago" style="width:100%;">
+            </div>
+          
+            <div class="item">
+              <img src="https://images.unsplash.com/photo-1494389945381-0fe114b8ea4b?ixlib=rb-0.3.5&q=100&fm=jpg&crop=entropy&h=900&fit=max" alt="New york" style="width:100%;">
+            </div>
+          </div>
+      
+          <!-- Left and right controls -->
+          <a class="">
+            <span class="glyphicon glyphicon-chevron-left" href="#myCarousel" data-slide="prev"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="">
+            <span class="glyphicon glyphicon-chevron-right" href="#myCarousel" data-slide="next"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  
+
+  
+<%end%>
+<script>
+ $(".b-info").click(function () {
+
+    $header = $(this).parents('.best-index');
+    //getting the next element
+    $content = $header.nextAll("#info-expanded").first().focus();
+    //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+    $content.slideToggle(500, function () {
+        //execute this after slideToggle is done
+        //change text of header based on visibility of content div
+       
+    });
+});
+
+ $(".b-media").click(function () {
+
+    $header = $(this).parents('.best-index');
+    //getting the next element
+    $content = $header.nextAll("#media-expanded").first().focus();
+    //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+    $content.slideToggle(500, function () {
+        //execute this after slideToggle is done
+        //change text of header based on visibility of content div
+       
+    });
+});
+
+
+ $(".b-reviews").click(function () {
+
+    $header = $(this).parents('.best-index');
+    //getting the next element
+    $content = $header.nextAll("#reviews-expanded").first().focus();
+    //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+    $content.slideToggle(500, function () {
+        //execute this after slideToggle is done
+        //change text of header based on visibility of content div
+       
+    });
+});
+
+</script>
+

@@ -12,12 +12,11 @@
 *add search to homepage
 *avoid double keyword entries
 *add ranking
+*add avatar to best
+*make homepage search exact match (maybe)
 
 fix logic on dropdown
-
 style homepage seach
-make homepage search exact match (maybe)
 add sorting to bests newest/oldest/ (views / rank / clicks) https://www.youtube.com/watch?v=cWYiAVMSHD4\
-
 add images media column to bests db
-add avatar to best
+

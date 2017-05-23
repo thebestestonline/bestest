@@ -16,13 +16,3 @@
 //= require_tree .
 //= require bootstrap-sprockets
 
-$(function() {
-  $("#best-item th a, #vote-thing a ").live("click", function() {
-    $.getScript$(this).attr("vot-thing");
-    return false;
-  });
-   $("#best_search input").keyup(function() {
-    $.get($("#best_search").attr("action"), $("#best_search").serialize(), null, "script");
-    return false;
-  });
-});

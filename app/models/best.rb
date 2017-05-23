@@ -17,11 +17,12 @@ class Best < ActiveRecord::Base
   validates :long_description, presence: true
   validates :company_name, presence: true
   validates :web_address, presence: true
+  validates :email, presence: true
 
 
 #GET search  
   def self.search(search)
-    where("term LIKE ?", "%#{search}%") 
+    where("term LIKE ?", "#{search}") 
   end
 
 

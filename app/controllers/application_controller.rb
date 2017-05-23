@@ -14,14 +14,14 @@ class ApplicationController < ActionController::Base
         
     before_action :set_index
         def set_index
-     
-            @b = Best.all
-            if params[:search]
+        @b = Best.all
+            if params[:search];
                 @bests = @b.search(params[:search]).order(:cached_weighted_score => :desc)
-                else
+            else 
                 @bests = @b.none
-            end
-      end      
+            end 
+        end
+    
        
             
 

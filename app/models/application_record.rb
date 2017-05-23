@@ -3,11 +3,6 @@ class ApplicationRecord < ActiveRecord::Base
   has_many :bests
   
   
-  #GET search  
-  def search
-    find(:all, :conditions => ['term LIKE ?', "%#{search}%"])
-  end
-  
 
   
   
